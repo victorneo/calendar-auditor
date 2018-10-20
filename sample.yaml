@@ -1,0 +1,18 @@
+# Categories are defined in a YAML file, with the following format:
+# <substring of event name on your Google Calendar>: Category name
+#
+# For example, if you have a series of business meetings on your calendar with
+# the following format: "Meeting with A", "Meeting with B", you can track
+# these in a single category with the following:
+#
+#     Meeting with: Business meetings
+#
+# If you have certain events that you want to ignore, you can add the
+# substring of event names under the Ignore category.
+#
+Flight: Flight(s)
+Planning: Planning work
+Interview: Interview(s)
+Ignore:
+        - Ignore this
+        - Ignore that

@@ -7,7 +7,6 @@ You have time, you just need to [make time for time][1].
 
 ![Sample run of the Script](screenshot.png?raw=true "Script Output")
 
-[1]: https://hbr.org/2011/12/make-time-for-time.html
 
 ## What this is today
 
@@ -35,15 +34,36 @@ project. Run `pipenv sync` to install the dependencies.
 
 Once dependencies are installed, you can run the analyzer by running the follow command:
 
+    cp sample.yaml config.yaml
     python analyzer.py
 
 On the first run, a new browser window / tab will open up for you to authorize
 this script.
 
-[2]: https://developers.google.com/calendar/quickstart/python
-[3]: https://pipenv.readthedocs.io/en/latest/
+## Configuring the Categories to Track
+
+Copy `sample.yaml` to `config.yaml` if you have not. `config.yaml` is the default
+file that the script will read to determine which events fall into which category.
+
+Categories are defined in a YAML file, with the following format:
+
+    <substring of event name on your Google Calendar>: Category name
+
+For example, if you have a series of business meetings on your calendar with
+the following format: "Meeting with A", "Meeting with B", you can track
+these in a single category with the following:
+
+    Meeting with: Business meetings
+
+If you have certain events that you want to ignore, you can add the
+substring of event names under the Ignore category.
 
 
 ## License
 
 Apache license 2.0
+
+
+[1]: https://hbr.org/2011/12/make-time-for-time.html
+[2]: https://developers.google.com/calendar/quickstart/python
+[3]: https://pipenv.readthedocs.io/en/latest/
